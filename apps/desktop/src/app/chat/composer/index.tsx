@@ -1083,8 +1083,8 @@ export function ChatBar({
       }
     } else if (!hasComposerPayload && queuedPrompts.length > 0) {
       void drainNextQueued()
-    } else if (draft.trim() || attachments.length > 0) {
-      const submitted = draft
+    } else if (draftRef.current.trim() || attachments.length > 0) {
+      const submitted = draftRef.current
       triggerHaptic('submit')
       clearDraft()
       clearComposerAttachments()
